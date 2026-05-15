@@ -11,7 +11,7 @@
 
       <h3>Create a New Listing</h3>
 
-      <form action="/listings" method="POST">
+      <form action="/listings" method="POST" class="needs-validation" novalidate >
         <div class="mb-3">
           <label for="title" class="form-lable">Title</label>
           <input
@@ -19,12 +19,18 @@
             name="listing[title]"
             placeholder="Add a catchy title"
             class="form-control"
+            required
           />
+            <div class="valid-feedback">Title looks good!</div>
+            <div class="invalid-feedback">Title is required</div>
         </div>
 
         <div class="mb-3">
           <label for="description" class="form-lable">Description</label>
-          <textarea name="listing[description]" class="form-control"></textarea>
+          <textarea name="listing[description]" class="form-control" required></textarea>
+          <div class="invalid-feedback">
+            Please enter a short description
+          </div>
         </div>
 
         <div class="mb-3">
@@ -45,7 +51,11 @@
               name="listing[price]"
               placeholder="1200"
               class="form-control"
+              required
             />
+            <div class="invalid-feedback">
+              Price should be valid
+            </div>
           </div>
 
           <div class="mb-3 col-md-8">
@@ -55,7 +65,11 @@
               name="listing[country]"
               placeholder="India"
               class="form-control"
+              required
             />
+            <div class="invalid-feedback">
+              Country name should be valid
+            </div>
           </div>
         </div>
 
@@ -66,7 +80,11 @@
             name="listing[location]"
             placeholder="Jaipur, Rajasthan"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">
+              Location should be valid
+          </div>
         </div>
 
         <button class="btn btn-dark add-btn mt-3">Add</button>
